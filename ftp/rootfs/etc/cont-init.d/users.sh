@@ -35,6 +35,12 @@ for user in $(bashio::config 'users|keys'); do
         echo 'dirlist_enable=YES' >> "/etc/vsftpd/users/${username}"
     fi
 
+    # Allow local root directory override per user
+    if bashio::config.has_value "users[${user}].local_root"; then
+    	local_root=$(bashio::config "users[${user}].local_root")
+    	echo "local_root=${local_root}" >> "/etc/vsftpd/users/${username}"
+    fi
+    
     # Require a secure password
     if bashio::config.has_value "users[${user}].password" \
         && ! bashio::config.true 'i_like_to_be_pwned'; then
