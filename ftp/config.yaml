@@ -77,5 +77,5 @@ schema:
       media: bool
       share: bool
       ssl: bool
-      local_root: local_root?
+      local_root: str?
   i_like_to_be_pwned: bool?

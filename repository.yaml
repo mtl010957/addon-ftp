@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: My Home Assistant FTP add-on repository
+url: 'https://github.com/mtl010957/addon-ftp'
+maintainer: Mike Loeffler <mtl010957@comcast.net>
